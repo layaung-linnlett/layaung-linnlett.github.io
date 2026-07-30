@@ -93,8 +93,8 @@
       <img src="assets/job-market.png" alt="Skill demand chart from the UK Job Market Intelligence Dashboard">
       <div class="project-body">
         <h3>UK Job Market Intelligence Dashboard <span class="project-status status-live">Live</span></h3>
-        <div class="tags"><span>Python</span><span>SQL</span><span>Adzuna API</span><span>NLP</span><span>Streamlit</span></div>
-        <p class="desc">Pipeline (API → SQL → NLP → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning and pay up to 2x more for it.</p>
+        <div class="tags"><span>Python</span><span>SQL</span><span>Adzuna API</span><span>Streamlit</span></div>
+        <p class="desc">Pipeline (API → SQL → keyword extraction → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning and pay roughly 1.5x more for it.</p>
         <div class="project-links">
           <a href="https://uk-job-market-intelligence.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
           <a href="https://github.com/layaung-linnlett/uk-job-market-intelligence" target="_blank" rel="noopener">Code →</a>
@@ -107,7 +107,7 @@
       <div class="project-body">
         <h3>UK Retail Sales &amp; Customer Retention Dashboard <span class="project-status status-code">Power BI</span></h3>
         <div class="tags"><span>PostgreSQL</span><span>SQL</span><span>Power BI</span><span>DAX</span></div>
-        <p class="desc">Three-page Power BI dashboard analysing 541,909 UK retail transactions. Flagged 195 high-value customers (£471.7k in historical spend) as churn risks, producing five prioritised retention recommendations, each with a defined success metric and illustrative revenue impact.</p>
+        <p class="desc">Three-page Power BI dashboard analysing 541,909 UK retail transactions. Flagged 195 high-value customers (£471.7k in historical spend) as churn risks, producing five prioritised business recommendations — including two targeted retention actions — each with a defined success metric and illustrative revenue impact.</p>
         <div class="project-links">
           <a href="https://github.com/layaung-linnlett/retail-sales-performance-dashboard" target="_blank" rel="noopener">Code →</a>
         </div>
@@ -115,11 +115,11 @@
     </div>
 
     <div class="project">
-      <img src="assets/churn.png" alt="SHAP feature importance chart from the Customer Churn Prediction project">
+      <img src="assets/churn.png" alt="XGBoost feature importance chart from the Customer Churn Prediction project">
       <div class="project-body">
         <h3>Customer Churn Prediction <span class="project-status status-code">Code</span></h3>
-        <div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>SHAP</span><span>Streamlit</span></div>
-        <p class="desc">Lifted churner recall from 58% to 77% on 7,043 telecom customers using SMOTE and decision-threshold tuning on an XGBoost classifier. Used SHAP to identify contract type, tenure and payment method as the strongest churn drivers.</p>
+        <div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>Streamlit</span></div>
+        <p class="desc">Lifted churner recall from 58% to 77% on 7,043 telecom customers using SMOTE and decision-threshold tuning on an XGBoost classifier. Used XGBoost feature importance to identify payment method, internet service type and contract length as the strongest churn drivers.</p>
         <div class="project-links">
           <a href="https://github.com/layaung-linnlett/customer_churn_prediction" target="_blank" rel="noopener">Code →</a>
         </div>
@@ -143,7 +143,7 @@
       <div class="project-body">
         <h3>Music Mood Classifier <span class="project-status status-code">Code</span></h3>
         <div class="tags"><span>Python</span><span>LightGBM</span><span>Streamlit</span></div>
-        <p class="desc">Classified 114,000 Spotify tracks into six mood categories at 69% test accuracy and 0.90 macro ROC-AUC, engineering 42 audio features and cross-validating a LightGBM model.</p>
+        <p class="desc">Classified 114,000 Spotify tracks into six mood categories at 68% test accuracy and 0.90 macro ROC-AUC, engineering 27 audio features (42 total) and cross-validating a LightGBM model.</p>
         <div class="project-links">
           <a href="https://github.com/layaung-linnlett/Music_Mood_Classifier" target="_blank" rel="noopener">Code →</a>
         </div>
