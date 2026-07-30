@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Yaung Linn Lett — Data Science &amp; AI Portfolio</title>
+<style>
+  :root{
+    --bg:#f7f7f5; --surface:#ffffff; --text:#1c1c1e; --muted:#5c5c60;
+    --border:#e4e4e0; --accent:#2f6f4f; --accent-soft:#e7f2ec; --tag-bg:#eeeeec;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#15161a; --surface:#1c1e23; --text:#eceeef; --muted:#a2a6ad;
+      --border:#2d2f36; --accent:#6fcf9c; --accent-soft:#1e2d26; --tag-bg:#25272e; }
+  }
+  :root[data-theme="dark"]{ --bg:#15161a; --surface:#1c1e23; --text:#eceeef; --muted:#a2a6ad;
+    --border:#2d2f36; --accent:#6fcf9c; --accent-soft:#1e2d26; --tag-bg:#25272e; }
+  :root[data-theme="light"]{ --bg:#f7f7f5; --surface:#ffffff; --text:#1c1c1e; --muted:#5c5c60;
+    --border:#e4e4e0; --accent:#2f6f4f; --accent-soft:#e7f2ec; --tag-bg:#eeeeec; }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  header.hero{padding:72px 0 40px; border-bottom:1px solid var(--border);}
+  header.hero h1{font-size:2.1rem; margin:0 0 6px; letter-spacing:-0.01em;}
+  header.hero p.tagline{color:var(--muted); font-size:1.05rem; margin:0 0 20px; max-width:60ch;}
+  .links{display:flex; flex-wrap:wrap; gap:10px;}
+  .links a{
+    color:var(--text); text-decoration:none; font-size:0.9rem; padding:7px 14px;
+    border:1px solid var(--border); border-radius:999px; transition:border-color .15s, color .15s;
+  }
+  .links a:hover{border-color:var(--accent); color:var(--accent);}
+
+  section{padding:44px 0;}
+  section + section{border-top:1px solid var(--border);}
+  h2.section-title{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+    margin:0 0 24px; font-weight:600;
+  }
+
+  .project{
+    display:grid; grid-template-columns:220px 1fr; gap:24px;
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:20px; margin-bottom:20px;
+  }
+  .project img{width:100%; height:150px; object-fit:cover; border-radius:8px; display:block; background:var(--tag-bg);}
+  .project-body h3{margin:0 0 4px; font-size:1.08rem;}
+  .project-status{display:inline-block; font-size:0.72rem; padding:2px 9px; border-radius:999px; margin-left:8px; vertical-align:middle; font-weight:600;}
+  .status-live{background:var(--accent-soft); color:var(--accent);}
+  .status-code{background:var(--tag-bg); color:var(--muted);}
+  .project-body p.desc{color:var(--muted); font-size:0.92rem; margin:6px 0 10px;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+  .tags span{background:var(--tag-bg); color:var(--muted); font-size:0.72rem; padding:3px 9px; border-radius:6px;}
+  .project-links a{
+    font-size:0.85rem; color:var(--accent); text-decoration:none; margin-right:16px; font-weight:600;
+  }
+  .project-links a:hover{text-decoration:underline;}
+
+  @media (max-width:640px){
+    .project{grid-template-columns:1fr;}
+    .project img{height:170px;}
+    header.hero{padding:48px 0 32px;}
+  }
+
+  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
+  .skills-grid h4{margin:0 0 8px; font-size:0.85rem; color:var(--muted); font-weight:600;}
+  .skills-grid p{margin:0; font-size:0.92rem;}
+
+  footer{padding:32px 0 60px; color:var(--muted); font-size:0.85rem;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>La Yaung Linn Lett</h1>
+    <p class="tagline">BSc (Hons) Data Science &amp; AI graduate (First Class), UWE Bristol. Five end-to-end projects across SQL/Power&nbsp;BI dashboards, machine learning and geospatial analysis — seeking 2026 graduate roles in data analytics or data science.</p>
+    <div class="links">
+      <a href="mailto:layaunglinnlett1@gmail.com">Email</a>
+      <a href="https://github.com/layaung-linnlett" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/layaung-linnlett/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project">
+      <img src="assets/job-market.png" alt="Skill demand chart from the UK Job Market Intelligence Dashboard">
+      <div class="project-body">
+        <h3>UK Job Market Intelligence Dashboard <span class="project-status status-live">Live</span></h3>
+        <div class="tags"><span>Python</span><span>SQL</span><span>Adzuna API</span><span>NLP</span><span>Streamlit</span></div>
+        <p class="desc">Pipeline (API → SQL → NLP → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning and pay up to 2x more for it.</p>
+        <div class="project-links">
+          <a href="https://uk-job-market-intelligence.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
+          <a href="https://github.com/layaung-linnlett/uk-job-market-intelligence" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/retail.jpg" alt="Customer retention page from the UK Retail Sales dashboard">
+      <div class="project-body">
+        <h3>UK Retail Sales &amp; Customer Retention Dashboard <span class="project-status status-code">Power BI</span></h3>
+        <div class="tags"><span>PostgreSQL</span><span>SQL</span><span>Power BI</span><span>DAX</span></div>
+        <p class="desc">Three-page Power BI dashboard analysing 541,909 UK retail transactions. Flagged 195 high-value customers (£471.7k in historical spend) as churn risks, producing five prioritised retention recommendations, each with a defined success metric and illustrative revenue impact.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/retail-sales-performance-dashboard" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/churn.png" alt="SHAP feature importance chart from the Customer Churn Prediction project">
+      <div class="project-body">
+        <h3>Customer Churn Prediction <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>SHAP</span><span>Streamlit</span></div>
+        <p class="desc">Lifted churner recall from 58% to 77% on 7,043 telecom customers using SMOTE and decision-threshold tuning on an XGBoost classifier. Used SHAP to identify contract type, tenure and payment method as the strongest churn drivers.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/customer_churn_prediction" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/bristol.png" alt="Geographically weighted regression coefficient map of Bristol">
+      <div class="project-body">
+        <h3>Bristol Crime &amp; House Prices — Spatial Regression <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>GeoPandas</span><span>mgwr</span><span>Streamlit</span></div>
+        <p class="desc">Raised explained variance (R²) from 0.11 to 0.74 across 182 Bristol neighbourhoods by replacing global OLS regression with Geographically Weighted Regression on 34,543 house transactions and 159,666 crime records.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/bristol-crime-houseprices-gwr" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/music-mood.png" alt="ROC-AUC curves from the Music Mood Classifier model">
+      <div class="project-body">
+        <h3>Music Mood Classifier <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>LightGBM</span><span>Streamlit</span></div>
+        <p class="desc">Classified 114,000 Spotify tracks into six mood categories at 69% test accuracy and 0.90 macro ROC-AUC, engineering 42 audio features and cross-validating a LightGBM model.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/Music_Mood_Classifier" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <h4>Languages &amp; Databases</h4>
+        <p>Python, SQL, PostgreSQL, SQLite</p>
+      </div>
+      <div>
+        <h4>Libraries &amp; Tools</h4>
+        <p>Pandas, Scikit-learn, XGBoost, LightGBM, Matplotlib, GeoPandas, Streamlit, Power BI, Git/GitHub, Excel</p>
+      </div>
+      <div>
+        <h4>Techniques</h4>
+        <p>Statistical analysis, hypothesis testing, data cleaning, machine learning, cross-validation, API data collection, dashboard development, data storytelling</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    La Yaung Linn Lett · BSc (Hons) Data Science &amp; AI, UWE Bristol (First Class) · <a href="mailto:layaunglinnlett1@gmail.com" style="color:inherit;">layaunglinnlett1@gmail.com</a>
+  </footer>
+</div>
+
+</body>
+</html>
