@@ -78,7 +78,7 @@
 <div class="wrap">
   <header class="hero">
     <h1>La Yaung Linn Lett</h1>
-    <p class="tagline">BSc (Hons) Data Science &amp; AI graduate (First Class), UWE Bristol. Five end-to-end projects across SQL/Power&nbsp;BI dashboards, machine learning and geospatial analysis — seeking 2026 graduate roles in data analytics or data science.</p>
+    <p class="tagline">BSc (Hons) Data Science &amp; AI graduate (First Class), UWE Bristol. Seven end-to-end projects across SQL/Power&nbsp;BI dashboards, machine learning and geospatial analysis — seeking 2026 graduate roles in data analytics or data science.</p>
     <div class="links">
       <a href="mailto:layaunglinnlett1@gmail.com">Email</a>
       <a href="https://github.com/layaung-linnlett" target="_blank" rel="noopener">GitHub</a>
@@ -94,7 +94,7 @@
       <div class="project-body">
         <h3>UK Job Market Intelligence Dashboard <span class="project-status status-live">Live</span></h3>
         <div class="tags"><span>Python</span><span>SQL</span><span>Adzuna API</span><span>Streamlit</span></div>
-        <p class="desc">Pipeline (API → SQL → keyword extraction → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning and pay roughly 1.5x more for it.</p>
+        <p class="desc">Pipeline (API → SQL → keyword extraction → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning — and advertise about 1.4x the salary (£57,306 vs £42,085 on the 613 postings with a real, non-estimated salary).</p>
         <div class="project-links">
           <a href="https://uk-job-market-intelligence.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
           <a href="https://github.com/layaung-linnlett/uk-job-market-intelligence" target="_blank" rel="noopener">Code →</a>
@@ -117,10 +117,11 @@
     <div class="project">
       <img src="assets/churn.png" alt="XGBoost feature importance chart from the Customer Churn Prediction project">
       <div class="project-body">
-        <h3>Customer Churn Prediction <span class="project-status status-code">Code</span></h3>
+        <h3>Customer Churn Prediction <span class="project-status status-live">Live</span></h3>
         <div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>Streamlit</span></div>
         <p class="desc">Lifted churner recall from 58% to 77% on 7,043 telecom customers using SMOTE and decision-threshold tuning on an XGBoost classifier. Used XGBoost feature importance to identify payment method, internet service type and contract length as the strongest churn drivers.</p>
         <div class="project-links">
+          <a href="https://customer-churn-predictor-telecom.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
           <a href="https://github.com/layaung-linnlett/customer_churn_prediction" target="_blank" rel="noopener">Code →</a>
         </div>
       </div>
@@ -129,11 +130,24 @@
     <div class="project">
       <img src="assets/bristol.png" alt="Geographically weighted regression coefficient map of Bristol">
       <div class="project-body">
-        <h3>Bristol Crime &amp; House Prices — Spatial Regression <span class="project-status status-code">Code</span></h3>
+        <h3>Bristol Crime &amp; House Prices — Spatial Regression <span class="project-status status-live">Live</span></h3>
         <div class="tags"><span>Python</span><span>GeoPandas</span><span>mgwr</span><span>Streamlit</span></div>
-        <p class="desc">Raised explained variance (R²) from 0.11 to 0.74 across 182 Bristol neighbourhoods by replacing global OLS regression with Geographically Weighted Regression on 34,543 house transactions and 159,666 crime records.</p>
+        <p class="desc">Raised explained variance (R²) from 0.11 to 0.74 across 182 Bristol neighbourhoods by replacing global OLS regression with Geographically Weighted Regression on 34,543 house transactions and 159,666 crime records. Crime's effect on price ranges from −22.6% to +2.6% depending on the neighbourhood, against a single −7.5% under the global model.</p>
         <div class="project-links">
+          <a href="https://bristol-crime-houseprices-gwr.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
           <a href="https://github.com/layaung-linnlett/bristol-crime-houseprices-gwr" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/london-property.png" alt="Investment score ranking of all 32 London boroughs">
+      <div class="project-body">
+        <h3>London Property Investment Scoring <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>SQLite</span><span>SQL</span><span>Streamlit</span></div>
+        <p class="desc">Scored all 32 London boroughs on growth, safety and affordability using 30 years of HM Land Registry prices and 6 years of Met Police crime data. Found a −0.83 correlation between 2024 entry price and 10-year growth: the most expensive boroughs have been the worst investments, with 17 of 32 offering above-average growth at below-average prices.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/london_property_analysis" target="_blank" rel="noopener">Code →</a>
         </div>
       </div>
     </div>
@@ -141,11 +155,23 @@
     <div class="project">
       <img src="assets/music-mood.png" alt="ROC-AUC curves from the Music Mood Classifier model">
       <div class="project-body">
-        <h3>Music Mood Classifier <span class="project-status status-code">Code</span></h3>
+        <h3>Music Mood Classifier <span class="project-status status-code">Group project</span></h3>
         <div class="tags"><span>Python</span><span>LightGBM</span><span>Streamlit</span></div>
-        <p class="desc">Classified 114,000 Spotify tracks into six genre-based mood clusters at 68% test accuracy and 0.90 macro ROC-AUC, engineering 27 audio features (42 total) and cross-validating a LightGBM model.</p>
+        <p class="desc">Five-person university project classifying 114,000 Spotify tracks into six mood categories at 68% test accuracy and 0.91 macro ROC-AUC. I was the feature engineer: dataset cleaning, the first 114→4 genre taxonomy, and the transformer expanding 15 raw audio features to 42. The final model and evaluation were teammates' work — the repo credits each contribution by name.</p>
         <div class="project-links">
           <a href="https://github.com/layaung-linnlett/Music_Mood_Classifier" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="assets/fifa.png" alt="Simulated World Cup 2026 title odds for the top 16 teams">
+      <div class="project-body">
+        <h3>FIFA World Cup 2026 Prediction Engine <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>Elo</span><span>Dixon-Coles</span><span>Monte Carlo</span><span>pytest</span></div>
+        <p class="desc">Rated 300 international teams with Elo from 49,477 historical results, converted rating gaps into scoreline probabilities with a Dixon-Coles Poisson model, then simulated all 104 tournament matches 10,000 times. Argentina wins about 23% of simulations. Covered by 77 automated tests running in CI.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/fifa-2026-predictor" target="_blank" rel="noopener">Code →</a>
         </div>
       </div>
     </div>
