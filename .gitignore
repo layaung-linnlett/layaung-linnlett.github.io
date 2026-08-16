@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Claude Code local tooling config
+.claude/
+
+# Local CV drafts - the published CV should be added deliberately, not by accident
+*.pdf
+
+# Files over ~50 MB should not be committed - use Git LFS or a download step instead.
