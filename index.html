@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Yaung Linn Lett — Data Science &amp; AI Portfolio</title>
+<meta name="description" content="Data Science &amp; AI graduate (First Class, UWE Bristol). Five end-to-end projects in credit risk, commercial analytics, SQL/Power BI and spatial statistics.">
 <style>
   :root{
     --bg:#f7f7f5; --surface:#ffffff; --text:#1c1c1e; --muted:#5c5c60;
@@ -27,7 +28,8 @@
   .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
   header.hero{padding:72px 0 40px; border-bottom:1px solid var(--border);}
   header.hero h1{font-size:2.1rem; margin:0 0 6px; letter-spacing:-0.01em;}
-  header.hero p.tagline{color:var(--muted); font-size:1.05rem; margin:0 0 20px; max-width:60ch;}
+  header.hero p.tagline{color:var(--muted); font-size:1.05rem; margin:0 0 10px; max-width:62ch;}
+  header.hero p.rtw{color:var(--muted); font-size:0.92rem; margin:0 0 20px; max-width:62ch;}
   .links{display:flex; flex-wrap:wrap; gap:10px;}
   .links a{
     color:var(--text); text-decoration:none; font-size:0.9rem; padding:7px 14px;
@@ -39,20 +41,23 @@
   section + section{border-top:1px solid var(--border);}
   h2.section-title{
     font-size:0.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
-    margin:0 0 24px; font-weight:600;
+    margin:0 0 8px; font-weight:600;
   }
+  p.section-note{color:var(--muted); font-size:0.9rem; margin:0 0 24px; max-width:62ch;}
 
   .project{
     display:grid; grid-template-columns:220px 1fr; gap:24px;
     background:var(--surface); border:1px solid var(--border); border-radius:14px;
     padding:20px; margin-bottom:20px;
   }
+  .project.no-image{grid-template-columns:1fr;}
   .project img{width:100%; height:150px; object-fit:cover; border-radius:8px; display:block; background:var(--tag-bg);}
   .project-body h3{margin:0 0 4px; font-size:1.08rem;}
   .project-status{display:inline-block; font-size:0.72rem; padding:2px 9px; border-radius:999px; margin-left:8px; vertical-align:middle; font-weight:600;}
   .status-live{background:var(--accent-soft); color:var(--accent);}
   .status-code{background:var(--tag-bg); color:var(--muted);}
   .project-body p.desc{color:var(--muted); font-size:0.92rem; margin:6px 0 10px;}
+  .project-body p.note{color:var(--muted); font-size:0.82rem; margin:0 0 10px; font-style:italic; opacity:.85;}
   .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
   .tags span{background:var(--tag-bg); color:var(--muted); font-size:0.72rem; padding:3px 9px; border-radius:6px;}
   .project-links a{
@@ -78,7 +83,8 @@
 <div class="wrap">
   <header class="hero">
     <h1>La Yaung Linn Lett</h1>
-    <p class="tagline">BSc (Hons) Data Science &amp; AI graduate (First Class), UWE Bristol. Seven end-to-end projects across SQL/Power&nbsp;BI dashboards, machine learning and geospatial analysis — seeking 2026 graduate roles in data analytics or data science.</p>
+    <p class="tagline">BSc (Hons) Data Science &amp; AI, First Class — UWE Bristol. Based in London. Five end-to-end projects across credit risk modelling, commercial analytics, SQL and Power&nbsp;BI, and spatial statistics — looking for full-time data science and analytics roles.</p>
+    <p class="rtw">Unrestricted right to work in the UK — no visa sponsorship required.</p>
     <div class="links">
       <a href="mailto:layaunglinnlett1@gmail.com">Email</a>
       <a href="https://github.com/layaung-linnlett" target="_blank" rel="noopener">GitHub</a>
@@ -87,52 +93,51 @@
   </header>
 
   <section id="projects">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Selected projects</h2>
+    <p class="section-note">Five projects, chosen over a larger set because these are the ones I can defend line by line. Every figure below is reproducible from the linked repository.</p>
 
     <div class="project">
-      <img src="assets/job-market.png" alt="Skill demand chart from the UK Job Market Intelligence Dashboard">
+      <img src="assets/pd-scorecard.png" alt="ROC curve, catch-rate curve, KS separation and score distributions for the PD application scorecard">
       <div class="project-body">
-        <h3>UK Job Market Intelligence Dashboard <span class="project-status status-live">Live</span></h3>
-        <div class="tags"><span>Python</span><span>SQL</span><span>Adzuna API</span><span>Streamlit</span></div>
-        <p class="desc">Pipeline (API → SQL → keyword extraction → dashboard) built on 1,200 real UK job postings. Found that data analyst roles want SQL and Power BI, while data scientist roles want machine learning — and advertise about 1.4x the salary (£57,306 vs £42,085 on the 613 postings with a real, non-estimated salary).</p>
+        <h3>PD Application Scorecard <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>scikit-learn</span><span>XGBoost</span><span>SHAP</span><span>Credit risk</span></div>
+        <p class="desc">A probability-of-default model on 855,502 Lending Club applications, using only what a lender holds on the day of application. It ranks applicants so a review team with 10% capacity catches 26.3% of all defaulters — 2.63&times; random — at Gini 0.383 on a test set opened once, after model selection closed. Logistic regression shipped ahead of a measurably better XGBoost challenger (Gini 0.427, bootstrap interval excluding zero) because a coefficient explains a decline to the applicant, which UK GDPR Article 22 pushes toward. Rather than assert a saving, the project solves for the break-even: review must prevent 4.6% of the losses it identifies to cover its own cost.</p>
         <div class="project-links">
-          <a href="https://uk-job-market-intelligence.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
-          <a href="https://github.com/layaung-linnlett/uk-job-market-intelligence" target="_blank" rel="noopener">Code →</a>
+          <a href="https://github.com/layaung-linnlett/pd-model-application-scorecard" target="_blank" rel="noopener">Code &amp; write-up →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project no-image">
+      <div class="project-body">
+        <h3>PowerCo — SME Churn &amp; Retention Economics <span class="project-status status-code">Code</span></h3>
+        <div class="tags"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Random forest</span><span>Cost modelling</span></div>
+        <p class="desc">Management believed SME churn was driven by price and proposed a blanket 20% discount. Tested on 14,606 customers joined to 193,002 monthly price records, the hypothesis did not hold — churners and stayers paid near-identical prices (&euro;0.1419 against &euro;0.1424 per kWh) — so the features were rebuilt around price movement rather than price level. The proposed discount would have cost &euro;553k to protect &euro;324k of at-risk margin, a &euro;229k loss even assuming it retained every churner. I recommended against it and proposed a targeted six-month pilot with a control group instead, because the value estimate ranges &euro;17k–&euro;92k across splits and the business case rests on an untested retention assumption.</p>
+        <p class="note">BCG X Data Science job simulation (Forage). The client is fictional and the datasets are supplied by the programme; the feature engineering, modelling, cost model and conclusions are my own.</p>
+        <div class="project-links">
+          <a href="https://github.com/layaung-linnlett/powerco-churn-analysis" target="_blank" rel="noopener">Code &amp; write-up →</a>
         </div>
       </div>
     </div>
 
     <div class="project">
-      <img src="assets/retail.jpg" alt="Customer retention page from the UK Retail Sales dashboard">
+      <img src="assets/retail.jpg" alt="Customer retention and value page from the UK online retail Power BI dashboard">
       <div class="project-body">
-        <h3>UK Retail Sales &amp; Customer Retention Dashboard <span class="project-status status-code">Power BI</span></h3>
-        <div class="tags"><span>PostgreSQL</span><span>SQL</span><span>Power BI</span><span>DAX</span></div>
-        <p class="desc">Three-page Power BI dashboard analysing 541,909 UK retail transactions. Flagged 195 high-value customers (£471.7k in historical spend) as churn risks, producing five prioritised business recommendations — including two targeted retention actions — each with a defined success metric and illustrative revenue impact.</p>
+        <h3>UK Retail Sales &amp; Customer Retention <span class="project-status status-code">SQL + Power BI</span></h3>
+        <div class="tags"><span>PostgreSQL</span><span>SQL</span><span>Power BI</span><span>DAX</span><span>Python</span></div>
+        <p class="desc">A three-page Power BI dashboard and eleven SQL scripts on 541,909 UK online retail transactions, with every published figure regenerated from the query files themselves so a result cannot drift from the query it claims to come from. It produced a 195-customer retention call list worth &pound;471,684 of historical spend (published revenue basis) — and then showed that the 90-day rule behind it was wrong in both directions, missing the eleventh-largest customer in the business, who buys every 7.5 days and had been silent for 38. Reviewing my own finished dashboard turned up four errors in it: one fixed, three measured, bracketed to the pound and disclosed.</p>
         <div class="project-links">
-          <a href="https://github.com/layaung-linnlett/retail-sales-performance-dashboard" target="_blank" rel="noopener">Code →</a>
+          <a href="https://github.com/layaung-linnlett/UK-Online-Retail-Sales-and-Customer-Retention-Dashboard" target="_blank" rel="noopener">Code &amp; write-up →</a>
         </div>
       </div>
     </div>
 
     <div class="project">
-      <img src="assets/churn.png" alt="XGBoost feature importance chart from the Customer Churn Prediction project">
-      <div class="project-body">
-        <h3>Customer Churn Prediction <span class="project-status status-live">Live</span></h3>
-        <div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>Streamlit</span></div>
-        <p class="desc">Lifted churner recall from 58% to 77% on 7,043 telecom customers using SMOTE and decision-threshold tuning on an XGBoost classifier. Used XGBoost feature importance to identify payment method, internet service type and contract length as the strongest churn drivers.</p>
-        <div class="project-links">
-          <a href="https://customer-churn-predictor-telecom.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
-          <a href="https://github.com/layaung-linnlett/customer_churn_prediction" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/bristol.png" alt="Geographically weighted regression coefficient map of Bristol">
+      <img src="assets/bristol.png" alt="Map of Bristol showing the local crime coefficient for each of 182 neighbourhoods">
       <div class="project-body">
         <h3>Bristol Crime &amp; House Prices — Spatial Regression <span class="project-status status-live">Live</span></h3>
-        <div class="tags"><span>Python</span><span>GeoPandas</span><span>mgwr</span><span>Streamlit</span></div>
-        <p class="desc">Raised explained variance (R²) from 0.11 to 0.74 across 182 Bristol neighbourhoods by replacing global OLS regression with Geographically Weighted Regression on 34,543 house transactions and 159,666 crime records. Crime's effect on price ranges from −22.6% to +2.6% depending on the neighbourhood, against a single −7.5% under the global model.</p>
+        <div class="tags"><span>Python</span><span>GeoPandas</span><span>mgwr</span><span>esda</span><span>Streamlit</span></div>
+        <p class="desc">Geographically Weighted Regression across Bristol's 182 neighbourhoods, built on 34,543 house sales and 159,666 recorded crimes. One city-wide model explains 11% of price variation; letting the crime effect vary by neighbourhood explains 74% on the same five predictors. The spatial model was not chosen by default — a Moran's I test on the global model's residuals (0.54, p = 0.001) is the evidence that one coefficient was hiding real local variation. Per doubling of recorded crime the local effect runs from &minus;16.3% to +1.8%, against &minus;5.3% globally: roughly &pound;38,000 of mispricing on a median &pound;344,000 home in the worst-affected areas.</p>
         <div class="project-links">
           <a href="https://bristol-crime-houseprices-gwr.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
           <a href="https://github.com/layaung-linnlett/bristol-crime-houseprices-gwr" target="_blank" rel="noopener">Code →</a>
@@ -141,37 +146,14 @@
     </div>
 
     <div class="project">
-      <img src="assets/london-property.png" alt="Investment score ranking of all 32 London boroughs">
+      <img src="assets/job-market.png" alt="Chart comparing skill demand in data analyst and data scientist job adverts">
       <div class="project-body">
-        <h3>London Property Investment Scoring <span class="project-status status-code">Code</span></h3>
-        <div class="tags"><span>Python</span><span>SQLite</span><span>SQL</span><span>Streamlit</span></div>
-        <p class="desc">Scored all 32 London boroughs on growth, safety and affordability using 30 years of HM Land Registry prices and 6 years of Met Police crime data. Found a −0.83 correlation between 2024 entry price and 10-year growth: the most expensive boroughs have been the worst investments, with 17 of 32 offering above-average growth at below-average prices.</p>
+        <h3>UK Job Market Intelligence <span class="project-status status-live">Live</span></h3>
+        <div class="tags"><span>Python</span><span>SQLite</span><span>SQL</span><span>Adzuna API</span><span>Streamlit</span></div>
+        <p class="desc">A pipeline from the Adzuna API into a four-table SQLite database, analysed in SQL and served as a dashboard, on 2,398 UK data job postings collected in two scrapes six weeks apart. Machine learning appears in 104 of 163 data-scientist skill mentions and 1 of 170 analyst mentions — two different jobs sharing a family name. Skill mentions also fell 25% between the scrapes, and the project deliberately does not report that as a market finding: every single skill moved the same direction, which points at the sample rather than at demand, and two data points cannot separate three competing explanations.</p>
         <div class="project-links">
-          <a href="https://github.com/layaung-linnlett/london_property_analysis" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/music-mood.png" alt="ROC-AUC curves from the Music Mood Classifier model">
-      <div class="project-body">
-        <h3>Music Mood Classifier <span class="project-status status-code">Group project</span></h3>
-        <div class="tags"><span>Python</span><span>LightGBM</span><span>Streamlit</span></div>
-        <p class="desc">Five-person university project classifying 114,000 Spotify tracks into six mood categories at 68% test accuracy and 0.91 macro ROC-AUC. I was the feature engineer: dataset cleaning, the first 114→4 genre taxonomy, and the transformer expanding 15 raw audio features to 42. The final model and evaluation were teammates' work — the repo credits each contribution by name.</p>
-        <div class="project-links">
-          <a href="https://github.com/layaung-linnlett/Music_Mood_Classifier" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/fifa.png" alt="Simulated World Cup 2026 title odds for the top 16 teams">
-      <div class="project-body">
-        <h3>FIFA World Cup 2026 Prediction Engine <span class="project-status status-code">Code</span></h3>
-        <div class="tags"><span>Python</span><span>Elo</span><span>Dixon-Coles</span><span>Monte Carlo</span><span>pytest</span></div>
-        <p class="desc">Rated 300 international teams with Elo from 49,477 historical results, converted rating gaps into scoreline probabilities with a Dixon-Coles Poisson model, then simulated all 104 tournament matches 10,000 times. Argentina wins about 23% of simulations. Covered by 77 automated tests running in CI.</p>
-        <div class="project-links">
-          <a href="https://github.com/layaung-linnlett/fifa-2026-predictor" target="_blank" rel="noopener">Code →</a>
+          <a href="https://uk-job-market-intelligence.streamlit.app" target="_blank" rel="noopener">Live dashboard →</a>
+          <a href="https://github.com/layaung-linnlett/uk-job-market-intelligence" target="_blank" rel="noopener">Code →</a>
         </div>
       </div>
     </div>
@@ -186,11 +168,11 @@
       </div>
       <div>
         <h4>Libraries &amp; Tools</h4>
-        <p>Pandas, Scikit-learn, XGBoost, LightGBM, Matplotlib, GeoPandas, Streamlit, Power BI, Git/GitHub, Excel</p>
+        <p>pandas, scikit-learn, XGBoost, SHAP, GeoPandas, mgwr, Matplotlib, Streamlit, Power BI, DAX, Git/GitHub, Excel</p>
       </div>
       <div>
         <h4>Techniques</h4>
-        <p>Statistical analysis, hypothesis testing, data cleaning, machine learning, cross-validation, API data collection, dashboard development, data storytelling</p>
+        <p>Credit risk modelling, imbalanced classification, decision-threshold and cost optimisation, fairness and disparate-impact auditing, spatial regression, hypothesis testing, API data collection, dashboard development, data storytelling</p>
       </div>
     </div>
   </section>
